@@ -13,13 +13,10 @@
   },
   "license": "MIT",
   "author": "",
-  "bin": {
-    "cts": "./src/bin/cts.ts"
-  },
   "scripts": {
     "precommit": "lint-staged",
     "commit": "git-cz",
-    "start": "sh scripts/start.sh"
+    "start": "ts-node src/bin/cts"
   },
   "lint-staged": {
     "ts": "eslint --fix"
@@ -31,14 +28,16 @@
   },
   "dependencies": {
     "clipboardy": "^2.3.0",
-    "googleapis": "^52.1.0"
+    "dotenv": "^8.2.0",
+    "enquirer": "^2.3.6",
+    "meow": "^7.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.0.14",
+    "@types/node-notifier": "^6.0.1",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "commitizen": "^4.1.2",
-    "cz-conventional-changelog": "^3.2.0",
     "cz-conventional-changelog-ja": "0.0.2",
     "eslint": "^7.3.1",
     "eslint-config-prettier": "^6.11.0",
