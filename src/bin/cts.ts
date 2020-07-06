@@ -72,4 +72,5 @@ const template = (
   console.log("-----------------");
 
   console.log("コピーされました");
+  console.log("");
 })();
