@@ -20,6 +20,10 @@
 \`\`\`
 ```
 
+- `日時` ... CLI起動時間
+- `予定` ... 入力したやつ
+- `カレンダーURL` ... envの`GOOGLE_CALENDAR_URL`を出力
+
 ## Usage
 
 ```bash
