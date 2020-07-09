@@ -28,10 +28,12 @@ const enquirerPrompt = async () => {
     name: "task",
     message: "今日の予定を書いてください（複数行書けます）",
     multiline: true,
+    // eslint-disable-next-line
+    // @ts-ignore
+    footer: "\n(書き終わったら改行した後にEnter)",
     hint: `(最初はEnterで改行してください)
-- 画面修正のタスクを終わらせる
-- packageのアップデートを行う
-(書き終わったらEnter)`,
+画面修正のタスクを終わらせる
+packageのアップデートを行う`,
   });
 
   return response;
@@ -45,7 +47,7 @@ const template = (
   const wrapTask = (task: EnquirerQuestion["task"]) =>
     task
       .split("\n")
-      .map((line) => `  ${line}`)
+      .map((line) => `-  ${line}`)
       .join("\n");
   return `
 おはようございます。
@@ -54,7 +56,7 @@ const template = (
 - 日時: ${time} ~
 - 予定: ${wrapTask(task)}
 - その他予定
-  - カレンダーURL 👉 ${calendarUrl}
+  - カレンダーURL: ${calendarUrl}
 \`\`\`
 `;
 };
