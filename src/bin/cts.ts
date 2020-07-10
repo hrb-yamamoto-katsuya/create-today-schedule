@@ -67,8 +67,9 @@ const template = (
 ) => {
   const wrapTask = (task: EnquirerQuestion["task"]) =>
     task
+      .trimRight()
       .split("\n")
-      .map((line) => `-  ${line}`)
+      .map((line) => `  - ${line}`)
       .join("\n");
 
   const place = answer.place.placeDetail ?? answer.place;
